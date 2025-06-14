@@ -1,0 +1,245 @@
+:root {
+  --primary-color: #ff8a58;
+  --secondary-color: #feab7b;
+  --text-light: #111010;
+  --text-dark: #ffffff;
+  --bg-light: #f0f4f8;
+  --bg-dark: #121212;
+  --slider-width: 80%;
+  --slider-height: 70vh;
+  --slider-min-height: 680px;
+  --transition: 0.5s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+
+.hero-image {
+  width: var(--slider-width);
+  max-width: 1200px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.contact {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container {
+  padding: 2rem;
+}
+
+.contact h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+}
+
+.contact-info p {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.contact a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.contact a:hover {
+  color: var(--secondary-color);
+}
+
+
+body.dark-mode .contact {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .contact h2 {
+  color: var(--secondary-color);
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px 22px;
+  background-color: #fff;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 7.5px;
+  transition: background-color var(--transition), color var(--transition);
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  background-color: var(--bg-dark);
+  color: #fa7b44;
+}
+
+
+header {
+  background: var(--secondary-color);
+  color: #ffffff;
+  text-align: left;
+  padding: 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+body.dark-mode header {
+  color: #000000;
+}
+
+
+footer {
+  background: var(--primary-color);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+body.dark-mode footer {
+  color: #000000;
+}
+
+
+#modeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  padding: 15px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+body.dark-mode #modeToggle {
+  background: rgba(0, 0, 0);
+  color: #ff8f5f;
+}
+
+
+.slider {
+  position: relative;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  min-height: var(--slider-min-height);
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+
+.slides {
+  display: flex;
+  transition: transform var(--transition);
+}
+
+
+.slide {
+  min-width: 100%;
+  transition: transform var(--transition);
+}
+
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+
+body.dark-mode .prev, 
+body.dark-mode .next {
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+
+body.dark-mode .prev:hover,
+body.dark-mode .next:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+
+body.dark-mode nav ul li a {
+  background-color: #000;
+  color: #fff;
+}
+
+body.dark-mode nav ul li a:hover {
+  background-color: #222;
+  color: var(--secondary-color);
+}
